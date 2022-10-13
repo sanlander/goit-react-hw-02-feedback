@@ -9,19 +9,9 @@ export class App extends Component {
     bad: 0,
   };
 
-  handleGoodBtn = () => {
+  handleState = value => {
     this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
-  };
-  handleNeutralBtn = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-  handleBadBtn = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
+      [value]: prevState[value] + 1,
     }));
   };
 
@@ -38,11 +28,7 @@ export class App extends Component {
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
-            onLeaveFeedback={[
-              this.handleGoodBtn,
-              this.handleNeutralBtn,
-              this.handleBadBtn,
-            ]}
+            onLeaveFeedback={this.handleState}
           />
         </Section>
         <Section title="Statistics">

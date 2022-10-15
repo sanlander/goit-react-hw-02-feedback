@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { firstLetterToUppercase } from 'components/utils/firstLetterToUppercase';
-import { Button } from './Buttons.styled';
+import { Button } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
   return (
